@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.example.notesapp.databinding.FragmentHomeBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -14,16 +15,16 @@ import androidx.navigation.fragment.findNavController
  * create an instance of this fragment.
  */
 class HomeFragment : Fragment() {
-
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_home, container, false)
-        val button = view.findViewById<Button>(R.id.button)
-        button.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_noteFragment) }
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        val view = binding.root
+        binding.button.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_noteFragment) }
         return view
     }
-
 }
