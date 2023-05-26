@@ -3,4 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_notes">Your Notes</string>
+    <string name="note1">Avocados are a fruit, not a vegetable</string>
+    <string name="note2">Ketchup was once sold as medicine</string>
+    <string name="note3">The Easter Island heads have bodies</string>
+    <string name="note4">Call parents</string>
+    <string name="note5">Go for a walk</string>
 </resources>
