@@ -6,11 +6,11 @@ import com.example.notesapp.model.Note
 class Datasource {
     fun loadNotes(): List<Note> {
         return listOf<Note>(
-        Note(R.string.note1),
-        Note(R.string.note2),
-        Note(R.string.note3),
-        Note(R.string.note4),
-        Note(R.string.note5)
+            Note("Avocados are a fruit, not a vegetable"),
+            Note("Ketchup was once sold as medicine"),
+            Note("The Easter Island heads have bodies"),
+            Note("Call parents"),
+            Note("Go for a walk")
         )
     }
 }

@@ -14,12 +14,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val myDataset = Datasource().loadNotes()
-        val recyclerView = findViewById<RecyclerView>(R.id.notesList)
-        recyclerView.adapter = NoteAdapter(this, myDataset)
-        recyclerView.setHasFixedSize(true)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)

@@ -1,3 +1,3 @@
 package com.example.notesapp.model
 
-data class Note(val stringResourceId: Int)
+data class Note(val noteContent: String)

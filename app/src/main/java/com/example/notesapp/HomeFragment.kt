@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.example.notesapp.adapter.NoteAdapter
+import com.example.notesapp.data.Datasource
 import com.example.notesapp.databinding.FragmentHomeBinding
 
 /**
@@ -20,11 +22,15 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
         binding.button.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_noteFragment) }
+        val myDataset = Datasource().loadNotes()
+        val recyclerView = binding.notesList
+        recyclerView.adapter = NoteAdapter(myDataset)
+        recyclerView.setHasFixedSize(true)
         return view
     }
 }
