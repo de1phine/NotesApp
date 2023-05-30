@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
-        binding.button.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_noteFragment) }
+        binding.addNoteButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_noteFragment) }
         val myDataset = Datasource().loadNotes()
         val recyclerView = binding.notesList
         recyclerView.adapter = NoteAdapter(myDataset)
