@@ -27,9 +27,12 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
         binding.addNoteButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_noteFragment) }
+//        var editButton: Button = binding.notesList.findViewById(R.id.edit_button)
+//        editButton.setOnClickListener { findNavController().navigate(R.id.action_homeFragment_to_noteFragment) }
+        val editButtonOnClick = { findNavController().navigate(R.id.action_homeFragment_to_noteFragment) }
         val myDataset = Datasource().loadNotes()
         val recyclerView = binding.notesList
-        recyclerView.adapter = NoteAdapter(myDataset)
+        recyclerView.adapter = NoteAdapter(myDataset, editButtonOnClick)
         recyclerView.setHasFixedSize(true)
         return view
     }
