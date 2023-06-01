@@ -19,4 +19,6 @@
         android:name="com.example.notesapp.NoteFragment"
         android:label="fragment_note"
         tools:layout="@layout/fragment_note" />
+        <action android:id="@+id/action_noteFragment_to_homeFragment"
+            app:destination="@id/homeFragment"/>
 </navigation>
